@@ -3,7 +3,7 @@
  * @version     1.0              
  * @since       1.0
  * @date 		03/27/2018
- * 				Insertion Sort Alogrithm
+ * 				Sorting Alogrithms
  */
 
 
@@ -30,14 +30,31 @@ public class Main {
 		{
 			arr[i] = (int) (Math.random() * 50); 
 		}
- 		// initiliazing new clas object sort
-		InsertionSort sort = new InsertionSort();
-		// printing the array before sort 
-		System.out.println("Before Insertion Sort");
+// 		// initiliazing new clas object sort
+//		InsertionSort sort = new InsertionSort();
+//		// printing the array before sort 
+//		System.out.println("Before Insertion Sort");
+//		printArray(arr);
+//		// sorting the arrya
+//		sort.insertionSort(arr);
+//		System.out.println("After Insertion Sort");
+//		printArray(arr);
+		
+
+		System.out.println("Array before MergeSort");
 		printArray(arr);
-		// sorting the arrya
-		sort.insertionSort(arr);
-		System.out.println("After Insertion Sort");
+		MergeSort merge = new MergeSort();
+		
+		long StartTime = System.nanoTime();// keeping track of start time 
+		// calling mergeSort algorithm
+		merge.sort(arr, 0, arr.length -1);
+		
+		long EndTime = System.nanoTime();// keeping track of end time
+		
+		long output = EndTime - StartTime;// defining a new variable so we can print the time complexicty of this algorithm on the screen
+		
+
+		System.out.println("Array after MergeSort" + "time it took in miliseconds " + output);
 		printArray(arr);
 		
 	
